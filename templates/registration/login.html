@@ -1,0 +1,21 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Error : {{form.errors}}</p>
+    <h1>{{request.user.hii }}</h1>
+    <form method = "POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{form.username.label_tag}}
+        {{form.username}}
+        {{form.password.label_tag}}
+        {{form.password}}
+        <input type="submit" value = "login">
+        <input type="Hidden" name="next" value={{next}}>
+    </form>
+</body>
+</html>
