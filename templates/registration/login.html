@@ -7,7 +7,7 @@
 </head>
 <body>
     <p>Error : {{form.errors}}</p>
-    <h1>{{request.user.hii }}</h1>
+    <h1> This is the login page</h1>
     <form method = "POST" action="{% url 'login' %}">
         {% csrf_token %}
         {{form.username.label_tag}}

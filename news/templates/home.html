@@ -6,9 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>The html is rendering!</h1>
+    {% if request.user.is_authenticated%}
+    <h1> Hi {{request.user}}, view News :</h1>
+    {% endif %}
+
+
+    <h1>The html is rendering! <br>{{len}} News available</h1>
     {% for news in news %}
         <a href={% url "detail_news" news.id %}><h2>{{ news.title }}</h2></a>
     {% endfor %}
+    <form method="POST" action="{% url "logout" %}">
+        {% csrf_token %}
+        <button type= "submit"> logout</button>
+    </form>
 </body>
 </html>
