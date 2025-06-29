@@ -9,6 +9,7 @@
     {% if request.user.is_authenticated%}
     <h1> Hi {{request.user}}, view News :</h1>
     {% endif %}
+    <p>Page view counter : {{request.page_views}}</p>
 
 
     <h1>The html is rendering! <br>{{len}} News available</h1>
